@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>App</title>
+  <script src="app-button.js" type="module"></script>
+</head>
+<body>
+<app-button label="Hit it!"></app-button>
+<p>Hit count - <span id="count"></span></p>
+<script>
+  const button = document.querySelector('app-button');
+  const label = document.querySelector('#count');
+  button.addEventListener( 'buttonClick', (event) => {
+      label.innerHTML = event.detail;
+  })
+</script>
+</body>
+</html>

@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'button-component';
+  count = 0;
+
+  onEvent(count: number) {
+    this.count = count;
+  }
 }

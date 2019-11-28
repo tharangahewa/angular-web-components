@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --output-hashing=none",
+    "package": "cat ./dist/button-component/runtime-es2015.js ./dist/button-component/polyfills-es2015.js ./dist/button-component/scripts.js ./dist/button-component/main-es2015.js > public/app-button.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -15,13 +16,15 @@
     "@angular/common": "~8.2.11",
     "@angular/compiler": "~8.2.11",
     "@angular/core": "~8.2.11",
+    "@angular/elements": "^8.2.14",
     "@angular/forms": "~8.2.11",
     "@angular/platform-browser": "~8.2.11",
     "@angular/platform-browser-dynamic": "~8.2.11",
     "@angular/router": "~8.2.11",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "document-register-element": "^1.7.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.13",
