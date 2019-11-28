@@ -12,4 +12,6 @@ Run `npm run build && npm run package` to build the web component.
 
 Run `http-server` and access `http://localhost:8080/app.html`
 
+[Install http-server](https://www.npmjs.com/package/http-server)
+
 
