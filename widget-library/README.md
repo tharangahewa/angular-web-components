@@ -14,7 +14,7 @@
 * Added ProgressComponent & RatingComponent to entryComponents array of the [widgets module](src/app/widgets/widgets.module.ts)     
 * Transformed Angular Components into Custom Elements using createCustomElement() method given by Angular Elements module
 * Registered the custom element by calling the native API customElements.define() by passing in the unique html custom tag name and the WebComponent
-```
+```angular2
 @NgModule({
   declarations: [ProgressComponent, RatingComponent],
   imports: [
@@ -45,7 +45,7 @@ export class WidgetsModule {
 ```
 * Added the  widgets module to  [dashboard module](src/app/dashboard/dashboard.module.ts) so the widgets module constructor will be called and above two steps will be invoked. Can be added to app module as well.
 * Added `schemas: [CUSTOM_ELEMENTS_SCHEMA]` indicating the compiler that custom elements will be used in this module.
-```
+```angular2
 @NgModule({
   declarations: [DashboardComponent, NavBarComponent, WidgetBoxComponent, WidgetAreaComponent],
   imports: [
@@ -73,4 +73,29 @@ export class DashboardModule {
               }
             ]
 ```
+## Added View Encapsulation
+* Added `encapsulation: ViewEncapsulation.ShadowDom` to encapsulate the styles of external world with the component styles 
+```angular2
+@Component({
+  selector: 'app-rating',
+  templateUrl: './rating.component.html',
+  styleUrls: ['./rating.component.scss'],
+  encapsulation: ViewEncapsulation.ShadowDom
+})
+```
+* However this wil cause the components to loose the globally imported styles. So the bootstrap styles are directly added to the component scss. Of course in an actual scenarios only the specific styles should be added. This only for demo purposes.
 
+```css
+@import "node_modules/bootstrap/scss/bootstrap";
+
+div {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
+``` 
