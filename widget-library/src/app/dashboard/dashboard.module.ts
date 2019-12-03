@@ -5,6 +5,7 @@ import { NavBarComponent } from './dashboard/nav-bar/nav-bar.component';
 import { WidgetBoxComponent } from './dashboard/widget-box/widget-box.component';
 import { RouterModule, Routes } from '@angular/router';
 import { WidgetAreaComponent } from './dashboard/widget-area/widget-area.component';
+import { WidgetsModule } from '../widgets/widgets.module';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    WidgetsModule,
   ]
 })
 export class DashboardModule {
