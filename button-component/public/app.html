@@ -7,10 +7,17 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>App</title>
   <script src="app-button.js" type="module"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<app-button label="Hit it!"></app-button>
-<p>Hit count - <span id="count"></span></p>
+<div class="jumbotron">
+  <h1 class="display-4">Hello, Web Components!</h1>
+  <p class="lead">This is a simple Web Components aka Custom Elements PoC.</p>
+  <hr class="my-4">
+  <p>In this project, below shown button has been built using Angular, as an Angular component. It has been then packaged into a Web Component and imported to this static html file</p>
+  <app-button label="Push it!"></app-button>
+  <label class="m-2 text-monospace">===> Hit count - <span id="count">0</span></label>
+</div>
 <script>
   const button = document.querySelector('app-button');
   const label = document.querySelector('#count');

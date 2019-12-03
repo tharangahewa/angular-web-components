@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } fro
 @Component({
   selector: 'app-button',
   templateUrl: './button.component.html',
-  styleUrls: ['./button.component.css'],
+  styleUrls: ['./bootstrap-styles.css', './button.component.css'],
   encapsulation: ViewEncapsulation.ShadowDom
 })
 export class ButtonComponent implements OnInit {
