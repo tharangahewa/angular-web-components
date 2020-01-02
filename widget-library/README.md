@@ -99,3 +99,8 @@ div {
   background-color: #fff;
 }
 ``` 
+## Web Components to be Dynamically Loaded
+
+* Added html custom elements via native document API. [widget-box](src/app/dashboard/dashboard/widget-box/widget-box.component.ts)  
+* Can pass different arguments to parameters and even register listeners
+
